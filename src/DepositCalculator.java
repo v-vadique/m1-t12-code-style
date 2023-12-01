@@ -1,9 +1,12 @@
 import java.util.Scanner;
 
+// Скорее всего ты не нажал Ctrk + Alt + L 
+
+
 public class DepositCalculator {
     double calculateComplexPercent(double amount, double yearRate, int period) {
         double outcome = amount * Math.pow((1 + yearRate / 12), 12 * period);
-        return roundSum(outcome, 2);
+        return roundSum(outcome, 2); // глагол get на мой взгял подошёл бы лучше
     }
 
     double calculateSimplePercent(double amount, double yearRate, int period) {
@@ -27,7 +30,7 @@ public class DepositCalculator {
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         type = scanner.nextInt();
         double outcome = 0;
-        if (type ==1) {
+        if (type ==1) { // не хватает пробела
             outcome = calculateSimplePercent(amount, 0.06, period);
         }
         else if (type == 2) {
